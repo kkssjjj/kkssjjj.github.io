@@ -4,10 +4,10 @@
    "details": [
     {
      "appID": "F5NU2PA3PK.com.nhnent.toastbeauty.user.test”,
-     "paths": [“/“,”/*”]
+     "paths": [“/“,”*”]
     },
  	"appID": "F5NU2PA3PK.com.nhnent.toastbeauty.user”,
-     	"paths": [“/“,”/*”]
+     	"paths": [“/“,”*”]
    ]
  }
 }
