@@ -5,9 +5,27 @@
 <body>
 <script>
 
+function saveCookie() {
+    var custom = "key123";
+	var now = new Date();
+	var time = now.getTime();
+	var expireTime = time + 1000*3600;
+	now.setTime(expireTime);
+	document.cookie = 'domain=https://sangjunkim.000webhostapp.com;'+'expires='+now.toGMTString()+';yourKey=' + custom  ;
+	
+}
+
+function getCookie(name) {
+   var re = new RegExp(name + "=([^;]+)");
+   var value = re.exec(document.cookie);
+   return (value != null) ? unescape(value[1]) : null;
+  }
+saveCookie();
 var c = document.cookie;
 var m = c.match(/name=(\w+)/);
 var name;
+
+
 
 if (m) {
   document.writeln("You are " + m[1] + '.');
@@ -18,22 +36,7 @@ if (m) {
 }
 
 
-function saveCookie() {
-    var custom = "key123";
-	var now = new Date();
-	var time = now.getTime();
-	var expireTime = time + 1000*3600;
-	now.setTime(expireTime);
-	document.cookie = 'yourKey=' + custom + ';expires='+now.toGMTString()+';domain=https://sangjunkim.000webhostapp.com?test=123';
-
-}
-
-function getCookie(name) {
-   var re = new RegExp(name + "=([^;]+)");
-   var value = re.exec(document.cookie);
-   return (value != null) ? unescape(value[1]) : null;
-  }
- saveCookie();
+ 
   var m = getCookie("domain");
  
   if(m){
