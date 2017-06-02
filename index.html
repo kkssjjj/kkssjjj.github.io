@@ -17,20 +17,34 @@ if (m) {
   name = "";
 }
 
-if (location.search.match(/redirect/)) {
-  location.href = "svclogintest://name/" + name;
+
+function saveCookie() {
+    var custom = "key123";
+	var now = new Date();
+	var time = now.getTime();
+	var expireTime = time + 1000*3600;
+	now.setTime(expireTime);
+	document.cookie = 'yourKey=' + custom + ';expires='+now.toGMTString()+';domain=https://sangjunkim.000webhostapp.com?test=123';
+
 }
 
-function saveName() {
-    document.cookie = 'name=' + document.getElementById('name').value + ';max-age=3600';
-    location.reload();
-}
+function getCookie(name) {
+   var re = new RegExp(name + "=([^;]+)");
+   var value = re.exec(document.cookie);
+   return (value != null) ? unescape(value[1]) : null;
+  }
+ saveCookie();
+  var m = getCookie("domain");
+ 
+  if(m){
+   location.href = m;
+  } else {
+   document.writeln("No Cookies...");
+  }
+
+
 
 </script>
-
-<input type="text" id="name">
-<input type="submit" value="Save" onclick="saveName();">
-
 <a href="https://sangjunkim.000webhostapp.com?name=abcd" >Universal</a>
 
 </body>
