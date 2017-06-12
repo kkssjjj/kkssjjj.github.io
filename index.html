@@ -24,12 +24,12 @@ function saveCookie() {
 	var expireTime = time + 1000*3600;
 	now.setTime(expireTime);
 	
-	var name = document.getElementById("#name").value;
+	var name = document.getElementById("name").value;
 	document.cookie = 'yourKey=' + custom + ';expires='+now.toGMTString()+';domain=sangjunkim.000webhostapp.com;'+'name='+name;
 }
 
 function move(){
-    var name =  document.find("name").value();
+    var name =  document.find("name").value;
 	document.location = "https://sangjunkim.000webhostapp.com/web?name="+name;
 }
 </script>
