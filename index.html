@@ -24,7 +24,7 @@ function saveCookie() {
 	var expireTime = time + 1000*3600;
 	now.setTime(expireTime);
 	
-	var name = document.find("#name").value();
+	var name = document.getElementById("#name").value;
 	document.cookie = 'yourKey=' + custom + ';expires='+now.toGMTString()+';domain=sangjunkim.000webhostapp.com;'+'name='+name;
 }
 
