@@ -28,7 +28,14 @@ function saveCookie() {
 	document.cookie = 'yourKey=' + custom + ';expires='+now.toGMTString()+';domain=sangjunkim.000webhostapp.com;'+'name='+name;
 }
 
+function getCookie(name) {
+   var re = new RegExp(name + "=([^;]+)");
+   var value = re.exec(document.cookie);
+   return (value != null) ? unescape(value[1]) : null;
+  }
+  
 function move(){
+	getCookie("name");
     var name =  document.getElementById("name").value;
 	document.location = "https://sangjunkim.000webhostapp.com/web?name="+name;
 }
@@ -36,6 +43,7 @@ function move(){
 
 <input type="text" id="name">
 <input type="submit" value="Save" onclick="saveCookie();">
+<input type="submit" value="Load" onclick="getCookie('name');">
 <input type="submit" value="Link" onclick="move();">
 
 <a href="https://sangjunkim.000webhostapp.com/web" >Universal</a>
