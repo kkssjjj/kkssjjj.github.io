@@ -31,12 +31,11 @@ function saveCookie() {
 	
 }
 function createCookie(name,value) {
-  if (days) {
     var date = new Date();
     date.setTime(date.getTime()+(60*60*1000));
     var expires = "; expires="+date.toGMTString();
-  }
-  else var expires = "";
+
+  var expires = "";
   document.cookie = name+"="+value+expires+"; path=/";
 }
 function getCookie(cname) {
