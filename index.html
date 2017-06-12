@@ -1,27 +1,13 @@
 <head>
-  <script>
+  <meta name="viewport" content="width=device-width">
+</head>
 
-function saveCookie() {
-    var custom = "key123";
-	var now = new Date();
-	var time = now.getTime();
-	var expireTime = time + 1000*3600;
-	now.setTime(expireTime);
-	document.cookie = 'domain=https://kkssjjj.github.io;'+'expires='+now.toGMTString()+';yourKey=' + custom  ;
-	
-}
+<body>
+<script>
 
-function getCookie(name) {
-   var re = new RegExp(name + "=([^;]+)");
-   var value = re.exec(document.cookie);
-   return (value != null) ? unescape(value[1]) : null;
-  }
-saveCookie();
 var c = document.cookie;
 var m = c.match(/name=(\w+)/);
 var name;
-
-
 
 if (m) {
   document.writeln("You are " + m[1] + '.');
@@ -31,23 +17,27 @@ if (m) {
   name = "";
 }
 
+function saveName() {
+   custom = "yourapp://<your_token>";
+	var now = new Date();
+	var time = now.getTime();
+	var expireTime = time + 1000*3600;
+	now.setTime(expireTime);
+	
+	var name = document.find("#name").value();
+	document.cookie = 'yourKey=' + custom + ';expires='+now.toGMTString()+';domain=sangjunkim.000webhostapp.com;'+'name='+name;
+}
 
- 
-  var m = getCookie("domain");
- 
-  if(m){
-//   location.href = m;
-  } else {
-   document.writeln("No Cookies...");
-  }
-
-
-
+function move(){
+    var name = 
+	document.location = "https://sangjunkim.000webhostapp.com/web";
+}
 </script>
 
-</head>
+<input type="text" id="name">
+<input type="submit" value="Save" onclick="saveCookie();">
+<input type="submit" value="Link" onclick="move();">
 
-<body>
-<a href="https://sangjunkim.000webhostapp.com?name=abcd" >Universal</a>
+<a href="https://sangjunkim.000webhostapp.com/web" >Universal</a>
 
 </body>
