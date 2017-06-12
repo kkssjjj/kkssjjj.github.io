@@ -18,17 +18,27 @@ if (m) {
 }
 
 function saveCookie() {
-   custom = "yourapp://<your_token>";
-	var now = new Date();
-	var time = now.getTime();
-	var expireTime = time + 1000*3600;
-	now.setTime(expireTime);
-	
-	var name = document.getElementById("name").value;
-	document.cookie = 'yourKey=' + custom +'; name='+name +'; expires='+now.toGMTString()+'; domain=sangjunkim.000webhostapp.com'+"; path=/";
+//    custom = "yourapp://<your_token>";
+// 	var now = new Date();
+// 	var time = now.getTime();
+// 	var expireTime = time + 1000*3600;
+// 	now.setTime(expireTime);
+// 	
+// 	var name = document.getElementById("name").value;
+// 	document.cookie = 'yourKey=' + custom +'; name='+name +'; expires='+now.toGMTString()+'; domain=sangjunkim.000webhostapp.com'+"; path=/";
+	var name =  document.getElementById("name").value;
+	createCookie("name",name);
 	
 }
-
+function createCookie(name,value) {
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime()+(60*60*1000));
+    var expires = "; expires="+date.toGMTString();
+  }
+  else var expires = "";
+  document.cookie = name+"="+value+expires+"; path=/";
+}
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
