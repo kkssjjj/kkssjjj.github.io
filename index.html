@@ -17,7 +17,7 @@ if (m) {
   name = "";
 }
 
-function saveName() {
+function saveCookie() {
    custom = "yourapp://<your_token>";
 	var now = new Date();
 	var time = now.getTime();
@@ -29,8 +29,8 @@ function saveName() {
 }
 
 function move(){
-    var name = 
-	document.location = "https://sangjunkim.000webhostapp.com/web";
+    var name =  document.find("#name").value();
+	document.location = "https://sangjunkim.000webhostapp.com/web?name="+name;
 }
 </script>
 
