@@ -52,8 +52,8 @@ function getCookie(cname) {
     return "";
 }
 function move(){
-	getCookie("name");
-    var name =  document.getElementById("name").value;
+	
+    var name =  getCookie("name");
 	document.location = "https://sangjunkim.000webhostapp.com/web?name="+name;
 }
 </script>
