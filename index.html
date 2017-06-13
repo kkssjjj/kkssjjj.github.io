@@ -28,14 +28,13 @@ function saveCookie() {
 // 	document.cookie = 'yourKey=' + custom +'; name='+name +'; expires='+now.toGMTString()+'; domain=sangjunkim.000webhostapp.com'+"; path=/";
 	var name =  document.getElementById("name").value;
 	createCookie("name",name);
+	createCookie("style",테스트);
 	
 }
 function createCookie(name,value) {
-    var date = new Date();
-    date.setTime(date.getTime()+(60*60*1000));
-    var expires = "; expires="+date.toGMTString();
-
-  var expires = "";
+  var date = new Date();
+  date.setTime(date.getTime()+(60*60*1000));
+  var expires = "; expires="+date.toGMTString();
   document.cookie = name+"="+value+expires+"; path=/";
 }
 function getCookie(cname) {
